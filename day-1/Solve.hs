@@ -11,10 +11,10 @@ import Data.List
 type Representation = [(String, Int)]
 
 findValue :: Representation -> (String -> String -> Bool) -> [String] -> Int
-findValue repr isContained = value
+findValue repr IsRepresented = value
   where
     value [] = error "No value found"
-    value (s : ss) = case find (\(a, _) -> a `isContained` s) repr of
+    value (s : ss) = case find (\(a, _) -> a `IsRepresented` s) repr of
       Nothing -> value ss
       Just (_, b) -> b
 
