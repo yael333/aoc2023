@@ -1,6 +1,12 @@
 import Data.Char (isDigit)
 import Data.List
-    ( find, isPrefixOf, isSuffixOf, sortBy, tails, inits )
+  ( find,
+    inits,
+    isPrefixOf,
+    isSuffixOf,
+    sortBy,
+    tails,
+  )
 
 type Representation = [(String, Int)]
 
@@ -29,5 +35,5 @@ secondChallengeRepresentation =
 main :: IO ()
 main = do
   input <- lines <$> readFile "input.txt"
-  print $ sum $ map (findCalibrationValue firstChallengeRepresentation ) input
-  print $ sum $ map (findCalibrationValue secondChallengeRepresentation ) input
+  print $ sum $ map (findCalibrationValue firstChallengeRepresentation) input
+  print $ sum $ map (findCalibrationValue secondChallengeRepresentation) input
