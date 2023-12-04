@@ -66,7 +66,7 @@ main = do
   let symbols = filter isSymbol scheme
 
   -- PART 1
-  let symbolNeighbors = map (\c -> findNeighbors symbols c (\c1 c2 -> ((1, length $ show $ getNumber c), (1, 1)))) numbers
+  let symbolNeighbors = map (\c -> findNeighbors symbols c partOneRange) numbers
   print $ sum $ map (getNumber . fst) $ filter (not . null . snd) $ zip numbers symbolNeighbors
 
   -- PART 2
